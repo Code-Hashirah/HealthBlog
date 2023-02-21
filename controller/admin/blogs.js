@@ -9,18 +9,18 @@ exports.postBlog=(req,res)=>{
     })
 }
 
+exports.postArticle=(req, res)=>{
+    res.render('./post')
+}
+
 exports.writeBlog=(req,res)=>{
-    const {title, post, image}=req.body;
-    db.execute('INSERT INTO blogs(title, post, image) VALUES(?,?,?', [title, post, image]).then(result=>{
+    const {title, post, image, date}=req.body;
+    db.execute('INSERT INTO blogs(title, post, image, date) VALUES(?, ?, ?, ?)', [title, post, image, date]).then(result=>{
         res.redirect(302, '/');
     })
         .catch(err=>{
             console.log(err)
         })
-   
-    
     }
 
-    exports.postArticle=(req, res)=>{
-        res.render('./post')
-    }
+    

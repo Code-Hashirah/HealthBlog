@@ -65,8 +65,8 @@
       <% if (Writings.length>0){
         for(let articles of Writings){ %>
     <h2><%= articles.title %>></h2>
-  <h5><span class="glyphicon glyphicon-time"></span> Post by Pretta on Sep 27, 2015.</h5>
-      <h5><span class="label label-danger"><%= articles.date %>></span> <span class="label label-primary">Ipsum</span></h5><br>
+  <h5><span class="glyphicon glyphicon-time"></span> Post by Pretta on <%= articles.date%>></h5>
+      <h5><span class="label label-danger"><%= articles.title  %>></span> <span class="label label-primary"><%= articles.date %></span></h5><br>
       <p> <%= articles.post %></p>
       <br><br>
 
