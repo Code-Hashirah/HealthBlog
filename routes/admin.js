@@ -9,5 +9,6 @@ router.get('/Post-Article', adminUserController.postArticle)
  
 router.post('/post-Article', adminUserController.writeBlog)
 
+router.get('/post-topic/:id',adminUserController.readArticle)
 
 module.exports=router;

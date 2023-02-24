@@ -42,42 +42,16 @@
 
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-3 sidenav">
-      <h4 id="h4">Wellness Infinito</h4>
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/post-Article">Add Posts</a></li>
-        <li><a href="#section3" class="animate__animated animate__bounce">Fitness Posts</a></li>
-        <li><a href="#section3">Photos</a></li>
-      </ul><br>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div>
-    </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-12">
       <h4><small>RECENT POSTS</small></h4>
-      <% if (Writings.length>0){
-        for(let articles of Writings){ %>
-    <h2><%= articles.title %>></h2>
-  <h5><span class="glyphicon glyphicon-time"></span> Post by Pretta on <%= articles.date%>></h5>
-      <h5><span class="label label-danger"><%= articles.title  %>></span> <span class="label label-primary"><%= articles.date %></span></h5><br>
-      <p style="height: 20px;  width:auto; overflow: hidden;"> <%= articles.post %></p>
-      <a href="/post-topic/<%=articles.id %>" class="btn btn-outline-primary fas fa-eye">Read</a>
+      
+    <h2><%= Writing.title %>></h2>
+  <h5><span class="glyphicon glyphicon-time"></span> Post by Pretta on <%= Writing.date%>></h5>
+      <h5><span class="label label-danger"><%= Writing[0].title  %></span> <span class="label label-primary"><%= Writing[0].date %></span></h5><br>
+      <pre> <%= Writing[0].post %></pre>
+     
 
-   <%     }
-        }
-   else{
-    %>
-    <h2>No Articles</h2>
-  <% }
-      %>
-      <hr>
      
 
       <!-- <h4>Leave a Comment:</h4>

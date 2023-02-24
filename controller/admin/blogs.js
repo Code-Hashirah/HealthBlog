@@ -23,4 +23,15 @@ exports.writeBlog=(req,res)=>{
         })
     }
 
+    exports.readArticle=(req,res)=>{
+            let id=req.params.id
+            db.execute('SELECT * FROM blogs WHERE id=?', [id]).then(item=>{
+                res.render('./read-article',{Writing:item[0]})
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+    
+    }
+
     
